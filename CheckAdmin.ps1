@@ -9,5 +9,6 @@ $checkadmin = [Security.Principal.WindowsPrincipal][Security.Principal.WindowsId
 if (-Not $checkadmin.IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
     $CMD = $MyInvocation.Line
     $CMDARGS = $CMD.Substring($CMD.IndexOf('.ps1')+4)
+    if ($CMD.StartsWith('if')) { $CMDARGS = '' }
     Start-Process Powershell -Verb RunAs -ArgumentList "$PSCommandPath $CMDARGS"
 }
