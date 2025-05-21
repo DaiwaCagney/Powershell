@@ -26,7 +26,7 @@ $chiper = Read-Host -AsSecureString "Please input some text"
 $Extension = [System.IO.Path]::GetExtension($FilePath)
 
 # Placeholder Replacement
-"[{0}]({1})" -f $link.innerText, $link.href
+"[{0}][{1}]" -f $link.innerText, $link.href
 
 # Write a Line:
 Write-Host ("-" * 100)
