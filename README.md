@@ -12,8 +12,14 @@ Param (
 
 Param ([string]$ForceOverwrite = 'N')
 
+param (
+	[string]$ServiceName,
+	[int]$Delay = 10
+)
+
 # Config:
 $ErrorActionPreference='STOP'
+
 $ProgressPreference='SilentlyContinue'
 
 # Temp File:
@@ -30,3 +36,17 @@ $Extension = [System.IO.Path]::GetExtension($FilePath)
 
 # Write a Line:
 Write-Host ("-" * 100)
+
+# Check Computer AD Path:
+Get-ADComputer -Identity "$_" | Select-Object DistinguishedName
+
+# Read File:
+Get-Content file.txt | ForEach-Object { }
+
+# Restart Service:
+Stop-Service $ServiceName
+
+Start-Service $ServiceName
+
+# Sleep:
+Start-Sleep -Seconds 10
