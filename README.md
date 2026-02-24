@@ -57,19 +57,19 @@ Get-ADComputer -Identity "$_" | Select-Object DistinguishedName
 
 ---
 
-## Read File:
+## Read File
 Get-Content file.txt | ForEach-Object { }
 
 ---
 
-## Restart Service:
+## Restart Service
 Stop-Service $ServiceName
 
 Start-Service $ServiceName
 
 ---
 
-## Sleep:
+## Sleep
 Start-Sleep -Seconds 10
 
 ---
