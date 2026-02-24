@@ -2,11 +2,11 @@
 
 ## Parameters:
 
-'''Param (
-    [string]$Right,
-    [switch]$Expand
-)
-'''
+	Param (
+	    [string]$Right,
+	    [switch]$Expand
+	)
+
 
 Param (
     [Parameter(Mandatory = $true)][string]$FileName
