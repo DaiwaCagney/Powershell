@@ -1,12 +1,11 @@
 # Powershell
 
-## Parameters:
+## Parameters
 
 	Param (
 	    [string]$Right,
 	    [switch]$Expand
 	)
-
 
 	Param (
 	    [Parameter(Mandatory = $true)][string]$FileName
@@ -19,36 +18,58 @@
 		[int]$Delay = 10
 	)
 
-# Config:
+---
+
+## Config
 $ErrorActionPreference='STOP'
 
 $ProgressPreference='SilentlyContinue'
 
-# Temp File:
+---
+
+# Temp File
 $TempPath = [System.IO.Path]::GetTempFileName()
 
-# Input Credentials:
+---
+
+# Input Credentials
 $chiper = Read-Host -AsSecureString "Please input some text"
+
+---
 
 # Get Extension
 $Extension = [System.IO.Path]::GetExtension($FilePath)
 
+---
+
 # Placeholder Replacement
 "[{0}][{1}]" -f $link.innerText, $link.href
 
-# Write a Line:
+---
+
+# Write a Line
 Write-Host ("-" * 100)
 
-# Check Computer AD Path:
+---
+
+# Check Computer AD Path
 Get-ADComputer -Identity "$_" | Select-Object DistinguishedName
+
+---
 
 # Read File:
 Get-Content file.txt | ForEach-Object { }
+
+---
 
 # Restart Service:
 Stop-Service $ServiceName
 
 Start-Service $ServiceName
 
+---
+
 # Sleep:
 Start-Sleep -Seconds 10
+
+---
