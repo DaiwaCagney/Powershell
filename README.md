@@ -1,8 +1,8 @@
 # Powershell
 
 ## Parameters:
-'''
-Param (
+
+'''Param (
     [string]$Right,
     [switch]$Expand
 )
