@@ -27,49 +27,49 @@ $ProgressPreference='SilentlyContinue'
 
 ---
 
-# Temp File
+## Temp File
 $TempPath = [System.IO.Path]::GetTempFileName()
 
 ---
 
-# Input Credentials
+## Input Credentials
 $chiper = Read-Host -AsSecureString "Please input some text"
 
 ---
 
-# Get Extension
+## Get Extension
 $Extension = [System.IO.Path]::GetExtension($FilePath)
 
 ---
 
-# Placeholder Replacement
+## Placeholder Replacement
 "[{0}][{1}]" -f $link.innerText, $link.href
 
 ---
 
-# Write a Line
+## Write a Line
 Write-Host ("-" * 100)
 
 ---
 
-# Check Computer AD Path
+## Check Computer AD Path
 Get-ADComputer -Identity "$_" | Select-Object DistinguishedName
 
 ---
 
-# Read File:
+## Read File:
 Get-Content file.txt | ForEach-Object { }
 
 ---
 
-# Restart Service:
+## Restart Service:
 Stop-Service $ServiceName
 
 Start-Service $ServiceName
 
 ---
 
-# Sleep:
+## Sleep:
 Start-Sleep -Seconds 10
 
 ---
