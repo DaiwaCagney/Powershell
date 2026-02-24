@@ -21,55 +21,55 @@
 ---
 
 ## Config
-$ErrorActionPreference='STOP'
+`$ErrorActionPreference='STOP'`
 
-$ProgressPreference='SilentlyContinue'
+`$ProgressPreference='SilentlyContinue'`
 
 ---
 
 ## Temp File
-$TempPath = [System.IO.Path]::GetTempFileName()
+`$TempPath = [System.IO.Path]::GetTempFileName()`
 
 ---
 
 ## Input Credentials
-$chiper = Read-Host -AsSecureString "Please input some text"
+`$chiper = Read-Host -AsSecureString "Please input some text"`
 
 ---
 
 ## Get Extension
-$Extension = [System.IO.Path]::GetExtension($FilePath)
+`$Extension = [System.IO.Path]::GetExtension($FilePath)`
 
 ---
 
 ## Placeholder Replacement
-"[{0}][{1}]" -f $link.innerText, $link.href
+`"[{0}][{1}]" -f $link.innerText, $link.href`
 
 ---
 
 ## Write a Line
-Write-Host ("-" * 100)
+`Write-Host ("-" * 100)`
 
 ---
 
 ## Check Computer AD Path
-Get-ADComputer -Identity "$_" | Select-Object DistinguishedName
+`Get-ADComputer -Identity "$_" | Select-Object DistinguishedName`
 
 ---
 
 ## Read File
-Get-Content file.txt | ForEach-Object { }
+`Get-Content file.txt | ForEach-Object { }`
 
 ---
 
 ## Restart Service
-Stop-Service $ServiceName
+`Stop-Service $ServiceName`
 
-Start-Service $ServiceName
+`Start-Service $ServiceName`
 
 ---
 
 ## Sleep
-Start-Sleep -Seconds 10
+`Start-Sleep -Seconds 10`
 
 ---
