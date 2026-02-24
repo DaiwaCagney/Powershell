@@ -8,16 +8,16 @@
 	)
 
 
-Param (
-    [Parameter(Mandatory = $true)][string]$FileName
-)
+	Param (
+	    [Parameter(Mandatory = $true)][string]$FileName
+	)
 
-Param ([string]$ForceOverwrite = 'N')
+	Param ([string]$ForceOverwrite = 'N')
 
-param (
-	[string]$ServiceName,
-	[int]$Delay = 10
-)
+	param (
+		[string]$ServiceName,
+		[int]$Delay = 10
+	)
 
 # Config:
 $ErrorActionPreference='STOP'
