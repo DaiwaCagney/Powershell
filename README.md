@@ -97,3 +97,5 @@ $report | Out-File -FilePath {Path\To\Report.txt}
 
 ## Hash
 `Get-FileHash -Algorithm MD5 -Path {Path to the file}`
+
+`Get-FileHash 'Path' -Algorithm MD5 | Format-list`
