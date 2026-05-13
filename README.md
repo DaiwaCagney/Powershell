@@ -99,3 +99,8 @@ $report | Out-File -FilePath {Path\To\Report.txt}
 `Get-FileHash -Algorithm MD5 -Path {Path to the file}`
 
 `Get-FileHash 'Path' -Algorithm MD5 | Format-list`
+
+---
+
+## Extract String
+`Select-String -Path "yourfile.txt" -Pattern "[a-zA-Z0-9._%+-]+@example\.com" -AllMatches | % { $_.Matches } | % { $_.Value }`
