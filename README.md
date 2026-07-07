@@ -57,6 +57,11 @@
 
 ---
 
+## Check AD User
+`Get-ADUser username -Properties *`
+
+---
+
 ## Read File
 `Get-Content file.txt | ForEach-Object { }`
 
