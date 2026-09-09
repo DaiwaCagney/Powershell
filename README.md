@@ -78,6 +78,20 @@ $report | Out-File -FilePath {Path\To\Report.txt}
 
 ### Filter String in File
 ```
+$docPath = Read-Host "Input the path of the Document"
+$word = New-Object -ComObject Word.Application
+$document = $word.Documents.Open($docPath)
+$heading2Texts = @()
+foreach ($paragraph in $document.Paragraphs) {
+    if ($paragraph.Style.NameLocal -eq "Heading 2") {
+        $heading2Texts += $paragraph.Range.Text.Trim()
+    }
+}
+$heading2Texts
+```
+
+### Word File
+```
 $AllContent = Get-Content example.txt
 $Allname = $AllContent | Where-Object { $_ -match "gmail.com" }
 $Allname >> result.txt
