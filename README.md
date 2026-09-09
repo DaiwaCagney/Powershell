@@ -32,11 +32,6 @@
 
 ---
 
-## Input Credentials
-`$chiper = Read-Host -AsSecureString "Please input some text"`
-
----
-
 ## Get Extension
 `$Extension = [System.IO.Path]::GetExtension($FilePath)`
 
@@ -79,6 +74,13 @@ $report = foreach ($file in $files) {
   Get-FileHash -Path $file.FullName
 }
 $report | Out-File -FilePath {Path\To\Report.txt}
+```
+
+### Filter String in File
+```
+$AllContent = Get-Content example.txt
+$Allname = $AllContent | Where-Object { $_ -match "gmail.com" }
+$Allname >> result.txt
 ```
 
 ---
